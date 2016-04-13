@@ -8,7 +8,7 @@ class SurveyListComponent extends React.Component {
   render() {
     return (
       <div className="surveylist-component">
-        Please edit src/components///SurveyListComponent.js to update this component!
+        This is SurveyListComponent
       </div>
     );
   }
