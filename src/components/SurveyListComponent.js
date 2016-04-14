@@ -4,11 +4,26 @@ import React from 'react';
 
 require('styles//SurveyList.scss');
 
-class SurveyListComponent extends React.Component {
+export default class SurveyListComponent extends React.Component {
+	// constructor(props) {
+ //        super(props)
+ //    }
   render() {
+  	const listItems = this.props.data.survey_results.map((item) => {
+  		return (
+	  		<li key={item.name}>
+	  			<h3>{item.name}</h3>
+	  			<p><strong>Response rate: </strong> {item.response_rate} </p>
+	  		</li>
+  		)
+  	})
+
     return (
       <div className="surveylist-component">
         This is SurveyListComponent
+        <ul>
+        	{listItems}
+        </ul>
       </div>
     );
   }
@@ -16,8 +31,10 @@ class SurveyListComponent extends React.Component {
 
 SurveyListComponent.displayName = 'SurveyListComponent';
 
-// Uncomment properties you need
-// SurveyListComponent.propTypes = {};
-// SurveyListComponent.defaultProps = {};
+SurveyListComponent.propTypes = {
+	data: React.PropTypes.object
+};
+SurveyListComponent.defaultProps = {};
 
-export default SurveyListComponent;
+
+
