@@ -5,22 +5,25 @@ import React from 'react';
 require('styles//SurveyList.scss');
 
 export default class SurveyListComponent extends React.Component {
-	// constructor(props) {
- //        super(props)
- //    }
+	constructor(props) {
+        super(props)
+        this.handleSurveyClick =this.handleSurveyClick.bind(this)
+    }
+    handleSurveyClick() {
+    	this.props.onSurveyClick()
+    }
   render() {
-  	const listItems = this.props.data.survey_results.map((item) => {
+  	const listItems = this.props.surveyData.survey_results.map((item) => {
   		return (
-	  		<li key={item.name}>
+	  		<li key={item.name} onClick={this.handleSurveyClick}>
 	  			<h3>{item.name}</h3>
-	  			<p><strong>Response rate: </strong> {item.response_rate} </p>
+	  			<p><strong>Response rate: </strong> {item.response_rate.toFixed(2)} </p>
 	  		</li>
   		)
   	})
 
     return (
       <div className="surveylist-component">
-        This is SurveyListComponent
         <ul>
         	{listItems}
         </ul>
@@ -29,12 +32,16 @@ export default class SurveyListComponent extends React.Component {
   }
 }
 
-SurveyListComponent.displayName = 'SurveyListComponent';
+SurveyListComponent.displayName = 'SurveyListComponent'
 
 SurveyListComponent.propTypes = {
-	data: React.PropTypes.object
+	surveyData: React.PropTypes.object.isRequired,
+	onSurveyClick: React.PropTypes.func.isRequired
+
 };
-SurveyListComponent.defaultProps = {};
+SurveyListComponent.defaultProps = {
+	surveyData: {}
+};
 
 
 
