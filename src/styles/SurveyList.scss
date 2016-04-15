@@ -1,9 +1,37 @@
 .surveylist-component {
+	ul {
+		padding: 10px;
+	  margin: 0;
+	  text-align: center;
+	}
   li {
    	display: inline-block;
-  	border: 1px solid grey;
-  	background: tomato;
- 	margin: 15px;
- 	padding: 15px;
+   	min-width: 250px;
+  	border: 1px solid #ccc;
+  	background: #fff;
+	 	margin: 15px;
+	 	padding: 25px;
+	 	border-radius: 3px;
+	 	box-shadow: 0 1px 1px 1px #ddd;
+	 	cursor: pointer;
+	 	transition: .3s;
+
+	 	&:hover {
+	 		box-shadow: 0 0 5px 2px #ccc;
+	 		border-color: #167385;
+	 	}
+
+	 	&.selected {
+	 		border-color: #167385;
+	 	}
+	}
+
+  h3 {
+  	color: #167385;
+  	font-size: 20px;
+  	margin: 0 0 10px 0
+  }
+  p {
+  	font-size: 14px;
   }
 }

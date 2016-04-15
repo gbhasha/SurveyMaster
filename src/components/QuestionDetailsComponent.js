@@ -37,19 +37,29 @@ export default class QuestionDetailsComponent extends React.Component {
 	render() {
 	  	const questions = this.props.questions
 	    return (
-	      	<ul className="questiondetails-component">
-				{
-					questions.map( q => {
-			    		return (
-			    			<li key={q.description}>
-					    		<p><strong>Q: </strong> {q.description}</p>
-					    		<p><strong>Average Response Rating: </strong>{this.getAverageRating(q)}</p>
+	    	<div className="questiondetails-component">
+		      	<table className="questiondetails-table">
+		      		<thead>
+		      			<tr>
+		      				<th>Question</th>
+		      				<th>Rating Average</th>
+		      			</tr>
+		      		</thead>
+		      		<tbody>
+					{
+						questions.map( q => {
+				    		return (
+				    			<tr key={q.description}>
+						    		<td> {q.description}</td>
+						    		<td>{this.getAverageRating(q)}</td>
 
-					    	</li>
-		    			)
-			    	})
-				}
-	      	</ul>
+						    	</tr>
+			    			)
+				    	})
+					}
+					</tbody>
+		      	</table>
+	      	</div>
 	    )
 	}
 }

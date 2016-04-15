@@ -20,8 +20,12 @@ export default class AppComponent extends React.Component {
 		}
 	}
 
-	handleSurveyClick(e) {
-		console.log('A', e)
+	handleSurveyClick(item) {
+		if(item.name=='Simple Survey') {
+			this.setState({resultData: SurveyResultData1})
+		} else {
+			this.setState({resultData: SurveyResultData2})
+		}
 	}
 
   render() {

@@ -9,15 +9,15 @@ export default class SurveyListComponent extends React.Component {
         super(props)
         this.handleSurveyClick =this.handleSurveyClick.bind(this)
     }
-    handleSurveyClick() {
-    	this.props.onSurveyClick()
+    handleSurveyClick(item) {
+    	this.props.onSurveyClick(item)
     }
   render() {
   	const listItems = this.props.surveyData.survey_results.map((item) => {
   		return (
-	  		<li key={item.name} onClick={this.handleSurveyClick}>
+	  		<li key={item.name} onClick={() => this.handleSurveyClick(item)}>
 	  			<h3>{item.name}</h3>
-	  			<p><strong>Response rate: </strong> {item.response_rate.toFixed(2)} </p>
+	  			<p><strong>Response rate: </strong> {(item.response_rate.toFixed(2) * 100) + '%'} </p>
 	  		</li>
   		)
   	})

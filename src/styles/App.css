@@ -1,4 +1,7 @@
 /* Base Application Styles */
+html {
+  background: #f6f8f8;
+}
 body {
   margin: 0;
 }
