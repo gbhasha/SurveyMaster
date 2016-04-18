@@ -1,7 +1,7 @@
 .surveyresult-component {
 	background: #fff;
     padding: 20px;
-    margin: 25px;
+    margin: 25px auto;
     width: calc(100% - 50px);
     max-width: 1000px;
     box-sizing: border-box;
@@ -9,7 +9,7 @@
     border-radius: 3px;
     height: 500px;
     overflow: auto;
-    
+
 	.surveyresult-themes {
 		list-style: none;
 		padding: 0;
