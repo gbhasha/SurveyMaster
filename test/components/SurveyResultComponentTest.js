@@ -1,5 +1,5 @@
 /* eslint-env node, mocha */
-/* global expect */
+/* global expect, fixture */
 /* eslint no-console: 0 */
 'use strict';
 
@@ -9,11 +9,22 @@ import createComponent from 'helpers/shallowRenderHelper';
 
 import SurveyResultComponent from 'components//SurveyResultComponent.js';
 
+
 describe('SurveyResultComponent', () => {
   let component;
+   
+  before(function(){
+    fixture.setBase('test/fixtures/json')
+  });
 
   beforeEach(() => {
-    component = createComponent(SurveyResultComponent);
+	const SurveyResultData = fixture.load('SurveyResults.json')
+    component = createComponent(SurveyResultComponent, {surveyResultData: SurveyResultData});
+
+  });
+
+  afterEach(function(){
+    fixture.cleanup()
   });
 
   it('should have its component name as default className', () => {
