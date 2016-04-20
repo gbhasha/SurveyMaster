@@ -9,6 +9,7 @@ import createComponent from 'helpers/shallowRenderHelper';
 
 import QuestionDetailsComponent from 'components//QuestionDetailsComponent.js';
 
+
 describe('QuestionDetailsComponent', () => {
   let component;
 

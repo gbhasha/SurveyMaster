@@ -14,12 +14,7 @@ export default class SurveyResultComponent extends React.Component {
 
   	const surveyResultDetail = this.props.surveyResultData.survey_result_detail
   	const submittedResponseCount = surveyResultDetail.submitted_response_count
-    return (
-      <div className="surveyresult-component">
-      	<h2>{surveyResultDetail.name}</h2>
-      	<ul className="surveyresult-themes">
-      		{
-      			surveyResultDetail.themes.map( theme => {
+    const surveyResults = surveyResultDetail.themes.map( theme => {
 			    	return (
 			    		<li key={theme.name}>
 							<h3>Theme: {theme.name}</h3>
@@ -32,8 +27,11 @@ export default class SurveyResultComponent extends React.Component {
 			    	)
 			    	
 			    })
-	      	}
-	      	
+    return (
+      <div className="surveyresult-component">
+      	<h2>{surveyResultDetail.name}</h2>
+      	<ul className="surveyresult-themes">
+      		{surveyResults}
       	</ul>
       </div>
     );

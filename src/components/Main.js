@@ -6,9 +6,9 @@ import React from 'react'
 import SurveyListComponent from './SurveyListComponent'
 import SurveyResultComponent from './SurveyResultComponent'
 
-import SurveyData from 'json!../data/index.json'
-import SurveyResultData1 from 'json!../data/SurveyResults_1.json'
-import SurveyResultData2 from 'json!../data/SurveyResults_2.json'
+import SurveyData from '../data/index.json'
+import SurveyResultData1 from '../data/SurveyResults_1.json'
+import SurveyResultData2 from '../data/SurveyResults_2.json'
 
 export default class AppComponent extends React.Component {
 	
@@ -40,6 +40,8 @@ export default class AppComponent extends React.Component {
     );
   }
 }
+
+AppComponent.displayName = 'AppComponent'
 
 AppComponent.defaultProps = {};
 

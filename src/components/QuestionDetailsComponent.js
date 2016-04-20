@@ -26,7 +26,7 @@ export default class QuestionDetailsComponent extends React.Component {
   		let avg	= 0
   	
 		surveyResponses.map( (response) => {
-			let responseContent = response.response_content !="" ? Number.parseInt(response.response_content) : 0;
+			let responseContent = response.response_content !='' ? Number.parseInt(response.response_content) : 0;
 			responseTotal += responseContent
 			
 			avg  = (responseTotal / submittedResponseCount)
@@ -64,11 +64,15 @@ export default class QuestionDetailsComponent extends React.Component {
 	}
 }
 
+QuestionDetailsComponent.displayName = 'QuestionDetailsComponent'
+
 QuestionDetailsComponent.propTypes = {
 	questions: React.PropTypes.array.isRequired,
 	submittedResponseCount: React.PropTypes.number.isRequired
 
-};
+}
+
 QuestionDetailsComponent.defaultProps = {
-	questions: []
-};
+	questions: [],
+	submittedResponseCount: 0
+}
