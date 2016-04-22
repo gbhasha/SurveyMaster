@@ -18,10 +18,14 @@
     "mocha": true
   },
    "extends": [
-      "airbnb:recommended",
-      "plugin:react/recommended"
+      "airbnb"
   ],
   "rules": {
-    "comma-dangle": ["error", "always"]
+    "no-console"                      : "off",
+    "comma-dangle"                    : ["error", "always-multiline"],
+    "react/jsx-first-prop-new-line"   : "off",
+    "react/prefer-stateless-function" : "off",
+    "import/no-unresolved"            : "off",
+    "arrow-body-style"                : "off",
   }
 }

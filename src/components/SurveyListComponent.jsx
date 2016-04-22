@@ -1,8 +1,6 @@
-'use strict';
-
 import React from 'react';
 
-require('styles//SurveyList.scss');
+import 'styles//SurveyList.scss';
 
 export default class SurveyListComponent extends React.Component {
   constructor(props) {
@@ -15,14 +13,12 @@ export default class SurveyListComponent extends React.Component {
   }
 
   render() {
-    const listItems = this.props.surveyData.survey_results.map((item) => {
-      return (
-       <li key={item.name} onClick={() => this.handleSurveyClick(item)}>
-          <h3>{item.name}</h3>
-          <p><strong>Response rate: </strong> {(item.response_rate.toFixed(2) * 100) + '%'} </p>
-        </li>
-      );
-    });
+    const listItems = this.props.surveyData.survey_results.map(item => (
+      <li key={item.name} onClick={() => this.handleSurveyClick(item)}>
+        <h3>{item.name}</h3>
+        <p><strong>Response rate: </strong> `${item.response_rate.toFixed(2) * 100} %` </p>
+      </li>)
+    );
 
     return (
       <div className="surveylist-component">
@@ -33,8 +29,6 @@ export default class SurveyListComponent extends React.Component {
     );
   }
 }
-
-SurveyListComponent.displayName = 'SurveyListComponent';
 
 SurveyListComponent.propTypes = {
   surveyData: React.PropTypes.object.isRequired,

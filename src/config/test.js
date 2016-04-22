@@ -1,8 +1,7 @@
-'use strict';
-
+/* eslint  react/jsx-first-prop-new-line:0 */
 import baseConfig from './base';
 
-let config = {
+const config = {
   appEnv: 'test',  // don't remove the appEnv property here
 };
 

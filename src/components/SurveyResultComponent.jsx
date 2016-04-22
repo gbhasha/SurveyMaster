@@ -1,33 +1,30 @@
-'use strict';
+/* eslint react/prop-types:0, react/prefer-stateless-function:0 */
 
 import React from 'react';
 
 import QuestionDetailsComponent from './QuestionDetailsComponent';
 
-require('styles//SurveyResult.scss');
+import 'styles//SurveyResult.scss';
 
 export default class SurveyResultComponent extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
 
   render() {
-
     const surveyResultDetail = this.props.surveyResultData.survey_result_detail;
     const submittedResponseCount = surveyResultDetail.submitted_response_count;
-    const surveyResults = surveyResultDetail.themes.map((theme) => { return (
-         <li key={theme.name}>
-                <h3>Theme: {theme.name}</h3>
-                <QuestionDetailsComponent
-                    questions={theme.questions}
-                    submittedResponseCount = {submittedResponseCount}
-
-                />
+    const surveyResults = surveyResultDetail.themes.map(theme => {
+      return (
+        <li key={theme.name}>
+          <h3>Theme: {theme.name}</h3>
+          <QuestionDetailsComponent
+            questions={theme.questions}
+            submittedResponseCount={submittedResponseCount}
+          />
         </li>
-        );
-
-      }
-    );
+      );
+    });
 
     return (
       <div className="surveyresult-component">

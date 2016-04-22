@@ -9,22 +9,21 @@ import createComponent from 'helpers/shallowRenderHelper';
 
 import SurveyResultComponent from 'components//SurveyResultComponent.js';
 
-
 describe('SurveyResultComponent', () => {
   let component;
-   
-  before(function(){
-    fixture.setBase('test/fixtures/json')
+
+  before(function () {
+    fixture.setBase('test/fixtures/json');
   });
 
   beforeEach(() => {
-	const SurveyResultData = fixture.load('SurveyResults.json')
-    component = createComponent(SurveyResultComponent, {surveyResultData: SurveyResultData});
+    const SurveyResultData = fixture.load('SurveyResults.json');
+    component = createComponent(SurveyResultComponent, { surveyResultData: SurveyResultData });
 
   });
 
-  afterEach(function(){
-    fixture.cleanup()
+  afterEach(function () {
+    fixture.cleanup();
   });
 
   it('should have its component name as default className', () => {
