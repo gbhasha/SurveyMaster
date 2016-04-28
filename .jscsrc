@@ -1,5 +1,3 @@
 {
-	"preset": "airbnb",
-	
-	"requireShorthandArrowFunctions": false
+	"preset": "airbnb"
 }

@@ -16,7 +16,7 @@ export default class SurveyListComponent extends React.Component {
     const listItems = this.props.surveyData.survey_results.map(item => (
       <li key={item.name} onClick={() => this.handleSurveyClick(item)}>
         <h3>{item.name}</h3>
-        <p><strong>Response rate: </strong> `${item.response_rate.toFixed(2) * 100} %` </p>
+        <p><strong>Response rate: </strong> {item.response_rate.toFixed(2) * 100}% </p>
       </li>)
     );
 
@@ -32,7 +32,7 @@ export default class SurveyListComponent extends React.Component {
 
 SurveyListComponent.propTypes = {
   surveyData: React.PropTypes.object.isRequired,
-  onSurveyClick: React.PropTypes.func.isRequired,
+  onSurveyClick: React.PropTypes.func,
 
 };
 SurveyListComponent.defaultProps = {

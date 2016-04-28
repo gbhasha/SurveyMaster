@@ -11,17 +11,10 @@ export default class QuestionDetailsComponent extends React.Component {
     this.getAverageRating = this.getAverageRating.bind(this);
   }
 
-  componentWillReceiveProps(nextProps) {
-    this.setState({
-      submittedResponseCount: nextProps.submittedResponseCount,
-    });
-  }
-
   getAverageRating(q) {
     const surveyResponses = q.survey_responses;
     const submittedResponseCount = this.state.submittedResponseCount;
     let responseTotal = 0;
-    // let avg = 0;
     surveyResponses.map(r => {
       const responseContent = r.response_content !== '' ? parseInt(r.response_content, 10) : 0;
       responseTotal += responseContent;

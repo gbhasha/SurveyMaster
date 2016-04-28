@@ -40,7 +40,17 @@ module.exports = {
         test: /\.json$/,
         loader: 'json-loader'
       }
+    ],
+    noParse: [
+      /node_modules\/sinon\//,
     ]
+  },
+  externals: {
+    'jsdom': 'window',
+    'cheerio': 'window',
+    'react/addons': true,
+    'react/lib/ExecutionEnvironment': true,
+    'react/lib/ReactContext': 'window',
   },
   resolve: {
     extensions: [ '', '.js', '.jsx' ],
@@ -51,7 +61,8 @@ module.exports = {
       sources: srcPath + 'sources/',
       stores: srcPath + 'stores/',
       styles: srcPath + 'styles/',
-      config: srcPath + 'config/' + process.env.REACT_WEBPACK_ENV
+      config: srcPath + 'config/' + process.env.REACT_WEBPACK_ENV,
+      sinon: 'sinon/pkg/sinon.js'
     }
   },
   plugins: [
